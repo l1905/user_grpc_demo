@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "";
+
+package demoproto;
+
+// Interface exported by the server.
+service DemoProto {
+
+  rpc Multiply(Args) returns (Resp) {}
+  rpc Divide(Args) returns (Resp) {}
+
+}
+
+message Args {
+  int32 A = 1;
+  int32 B = 2;
+}
+
+message Resp {
+	int32 R = 1;
+}
