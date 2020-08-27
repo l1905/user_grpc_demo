@@ -5,18 +5,23 @@ option go_package = "";
 package demoproto;
 
 // Interface exported by the server.
+// 定义接口实现
 service DemoProto {
-
+    // 定义乘法
   rpc Multiply(Args) returns (Resp) {}
+    // 定义除法
   rpc Divide(Args) returns (Resp) {}
+
 
 }
 
+// 请求参数
 message Args {
   int32 A = 1;
   int32 B = 2;
 }
 
+// 返回参数
 message Resp {
 	int32 R = 1;
 }

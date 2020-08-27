@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+option go_package = "user_api_service";
+
+package user_api_service;
+
+// Interface exported by the server.
+// 定义接口实现
+service UserApiService {
+    // 获取用户信息
+    rpc GetUserInfo(Args) returns (Resp) {}
+
+    // 根据一组用户ID， 获取用户列表
+    rpc GetUserInfoList(ArgsMany) returns (RespMany) {}
+
+    // 单向流 client
+    rpc GetuserInfoListStream01(stream Args) returns (RespMany) {}
+
+    // 单向流 server
+    rpc GetuserInfoListStream02(ArgsMany) returns (stream Resp) {}
+
+    // 双向流
+    rpc GetUserInfoListStream03(stream Args) returns (stream Resp) {}
+}
+
+// 请求参数
+message Args {
+    int32 UserId = 1;
+}
+
+message ArgsMany {
+    repeated int32  UserIdList = 1; // 数据[25855, 25856]
+}
+
+message Resp {
+    string ErrorCode = 1 ;
+    string ErrorMsg = 2;
+    Data Data= 3;
+}
+
+// 返回参数
+message RespMany {
+    string ErrorCode = 1 ;
+    string ErrorMsg = 2;
+    DataMany DataMany = 3;
+}
+
+message Data {
+    User User = 1;
+}
+message DataMany {
+    repeated User user_list = 1;
+}
+
+message User {
+    int32 UserId = 1;
+    string Mobile = 2;
+    string nickname = 3;
+}
+
+// 生成方式 protoc -I user_api_service  public/user.proto --go_out=plugins=grpc:user_api_service
+
+//  protoc -I user_api_service  user_api_service/user.proto --go_out=plugins=grpc:user_api_service
+
