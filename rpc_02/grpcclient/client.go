@@ -32,8 +32,8 @@ import (
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-	pb "learnrcp/routeguide"
 	"google.golang.org/grpc/testdata"
+	pb "learnrcp/rpc_02/routeguide"
 )
 
 var (

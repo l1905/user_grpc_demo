@@ -42,7 +42,7 @@ import (
 
 	"github.com/golang/protobuf/proto"
 
-	pb "learnrcp/routeguide"
+	pb "learnrcp/rpc_02/routeguide"
 )
 
 var (

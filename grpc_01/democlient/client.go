@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"google.golang.org/grpc"
-	pb "learnrcp/demoproto"
+	pb "learnrcp/grpc_01/demoproto"
 	"log"
 )
 

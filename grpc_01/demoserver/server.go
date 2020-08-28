@@ -5,7 +5,7 @@ import (
 	"fmt"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	"google.golang.org/grpc"
-	pb "learnrcp/demoproto"
+	pb "learnrcp/grpc_01/demoproto"
 	"log"
 	"net"
 )

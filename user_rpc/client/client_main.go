@@ -82,7 +82,6 @@ func main() {
 	}
 	stream02.Recv()
 
-
 	// 5)
 	var stream03 pb.UserApiService_GetUserInfoListStream03Client
 	stream03, err = client.GetUserInfoListStream03(context.TODO())
