@@ -149,7 +149,6 @@ func (t *serverOp) GetuserInfoListStream02(argsMany *pb.ArgsMany, stream pb.User
 }
 
 func (t *serverOp) GetUserInfoListStream03(stream pb.UserApiService_GetUserInfoListStream03Server) (err error) {
-
 	var args *pb.Args
 	resp := pb.Resp{
 		ErrorCode:            "",
